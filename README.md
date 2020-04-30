@@ -42,7 +42,7 @@ We recommend building on Ubuntu 16.04 LTS (64-bit)
     cd bitshares-core
     git checkout master # may substitute "master" with current release tag
     git submodule update --init --recursive
-    cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .
+    cmake -DBOOST_ROOT=/usr/local/opt/boost@1.60 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBoost_NO_BOOST_CMAKE=ON DOPENSSL_ROOT_DIR=/usr/local/opt/openssl@1.0 .
     make
 
 **Upgrade Script:** (prepend to the Build Script above if you built a prior release):
